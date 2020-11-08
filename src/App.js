@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import RegisterDRAS from './Components/Register/RegisterDRAS'
+import { Link, Router } from 'react-router-dom';
+import LoginDRAS from './Components/Login/LoginDRAS';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RegisterDRAS/>
+      {/* <Link 
+        to={{pathname:"/RegisterDRAS"}}
+        className=""
+      >
+          Register
+        </Link> 
+        <Link 
+        to={{pathname:"/LoginDRAS"}}
+        className=""
+      >
+          Login
+        </Link>  */}{/* 
+      <Router exact path="/RegisterDRAS" component={RegisterDRAS}/>
+      <Router exact path="/DRASLogin" component={LoginDRAS}/> */}
     </div>
   );
 }
