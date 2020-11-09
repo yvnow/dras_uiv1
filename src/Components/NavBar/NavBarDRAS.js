@@ -19,7 +19,7 @@ export class NavBarDRAS extends Component {
 						<FormControl type="text" placeholder="Search" className="mr-sm-2" />
 						<Button variant="outline-light">Search</Button>
 					</Form>
-					<Nav className="mr-right" style={{'margin-left':100}}>
+					<Nav className="mr-right" style={{'marginLeft':100}}>
 						<Nav.Link href="#home">Home</Nav.Link>
 						<Nav.Link href="#features">Pages</Nav.Link>
 						<Nav.Link href="#pricing">Logout</Nav.Link>

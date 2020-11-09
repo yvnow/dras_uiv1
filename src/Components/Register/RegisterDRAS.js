@@ -1,16 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
-import * as Yup from "yup";
-import { Route, Link} from 'react-router-dom';
+import * as yup from "yup";
 
+import { Route, Link} from 'react-router-dom';
+import ReactDOM from "react-dom";
 import "./RegisterDRAS.css";
 
-const RegValidationSchema = Yup.object().shape({
-  RegFormFullName: Yup.string().min(3, 'Please enter more than 3 characters').required('Required'),
-  RegFormPassword: Yup.string().min(8, 'Enter atleast 8 characters').required('Required'),
-  RegFormEmail: Yup.string().email('Please enter a valid email address').required('Required'),
-  RegFormCPassword: Yup.string().oneOf([Yup.ref('RegFormPassword'), null], 'Password must match')
+const RegValidationSchema = yup.object().shape({
+  RegFormFullName: yup.string().min(3, 'Please enter more than 3 characters').required('Required'),
+  RegFormPassword: yup.string().min(8, 'Enter atleast 8 characters').required('Required'),
+  RegFormEmail: yup.string().email('Please enter a valid email address').required('Required'),
+  RegFormCPassword: yup.string().oneOf([yup.ref('RegFormPassword'), null], 'Password must match')
         
 });
 
@@ -56,12 +56,11 @@ export default function RegisterDRAS() {
           />
       {errors.RegFormCPassword && <div className="ErrorMsg">{errors.RegFormCPassword.message}</div>}
       <input type="submit" value="Register"/>
-      {/* <Link 
-          to={{pathname:"/DRASLogin"}}
-          className=""
-      >
-          Login
-          </Link> */}
+      
+      <p>Existing user? <Link to="/login">Login here</Link> </p> 
+      <br/>
+      
+      <Link to="/"><h2>Go to Home</h2></Link>
     </form>
 
     );

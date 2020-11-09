@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
-import * as Yup from "yup";
+import * as yup from "yup";
 import { Route, Link} from 'react-router-dom';
 
 import "./LoginDRAS.css";
 
-const LoginValidationSchema = Yup.object().shape({
-  LoginFormPassword: Yup.string().min(8, 'Enter atleast 8 characters').required('Required'),
-  LoginFormEmail: Yup.string().email('Please enter a valid email address').required('Required')        
+const LoginValidationSchema = yup.object().shape({
+  LoginFormPassword: yup.string().min(8, 'Enter atleast 8 characters').required('Required'),
+  LoginFormEmail: yup.string().email('Please enter a valid email address').required('Required')        
 });
 
 export default function LoginDRAS() {
@@ -38,13 +38,12 @@ export default function LoginDRAS() {
           />
       {errors.LoginFormPassword && <div className="ErrorMsg">{errors.LoginFormPassword.message}</div>}
       
-      <input type="submit" value="Login"/>
-      {/* <Link 
-          to={{pathname:"/DRASLogin"}}
-          className=""
-      >
-          Login
-          </Link> */}
+      <Link to="/userhome"><input type="submit" value="Login"/></Link>
+      <p>New here? <Link to="/Register">Register here</Link> </p> 
+      <br/>
+      
+      <Link to="/"><h2>Go to Home</h2></Link>
+      
     </form>
 
     );

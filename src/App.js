@@ -1,31 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import {Route, Switch} from 'react-router-dom'
 import RegisterDRAS from './Components/Register/RegisterDRAS'
-import { Link, Router } from 'react-router-dom';
-import LoginDRAS from './Components/Login/LoginDRAS';
-import HomeDRAS from './Components/Home/HomeDRAS'
+import LoginDRAS from './Components/Login/LoginDRAS'
+import UserHome from './Components/UserHome/UserHome'
+import ErrorPage from './Components/ErrorPage/ErrorPage'
+import DRAS from './Components/DRASInit/DRAS';
 
 function App() {
   return (
     <div className="App">
-      {/* <RegisterDRAS/> */}
-
-      {/* <LoginDRAS/> */}
-      <HomeDRAS/>
-      {/* <Link 
-        to={{pathname:"/RegisterDRAS"}}
-        className=""
-      >
-          Register
-        </Link> 
-        <Link 
-        to={{pathname:"/LoginDRAS"}}
-        className=""
-      >
-          Login
-        </Link>  */}{/* 
-      <Router exact path="/RegisterDRAS" component={RegisterDRAS}/>
-      <Router exact path="/DRASLogin" component={LoginDRAS}/> */}
+      
+      <Switch>
+        <Route exact path="/" component={DRAS} />
+        <Route exact path='/register' component={RegisterDRAS}  />
+        <Route exact path='/login' component={LoginDRAS}/>
+        <Route exact path="/userhome" component={UserHome}/>
+        <Route component={ErrorPage}/>
+      </Switch>
+      {/* <LoginDRAS/>
+      <RegisterDRAS/>
+      <HomeDRAS/> */}
     </div>
   );
 }
