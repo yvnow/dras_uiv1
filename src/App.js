@@ -3,11 +3,15 @@ import './App.css';
 import RegisterDRAS from './Components/Register/RegisterDRAS'
 import { Link, Router } from 'react-router-dom';
 import LoginDRAS from './Components/Login/LoginDRAS';
+import HomeDRAS from './Components/Home/HomeDRAS'
 
 function App() {
   return (
     <div className="App">
-      <RegisterDRAS/>
+      {/* <RegisterDRAS/> */}
+
+      {/* <LoginDRAS/> */}
+      <HomeDRAS/>
       {/* <Link 
         to={{pathname:"/RegisterDRAS"}}
         className=""
